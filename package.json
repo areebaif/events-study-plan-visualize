@@ -1,0 +1,31 @@
+{
+  "name": "@ai-common-modules/events",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "clean": "del-cli build/**/*",
+    "build": "npm run clean && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/areebaif/events-study-plan-visualize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/areebaif/events-study-plan-visualize/issues"
+  },
+  "homepage": "https://github.com/areebaif/events-study-plan-visualize#readme",
+  "dependencies": {
+    "@types/events": "^3.0.0",
+    "del-cli": "^4.0.1",
+    "node-nats-streaming": "^0.3.2",
+    "typescript": "^4.5.5"
+  }
+}
