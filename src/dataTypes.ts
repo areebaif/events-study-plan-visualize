@@ -10,6 +10,8 @@ export interface skillCreatedEvent {
     _id: string;
     name: string;
     version: number;
+    course?: string | undefined;
+    book?: string | undefined;
   };
 }
 
@@ -19,6 +21,8 @@ export interface skillUpdatedEvent {
     _id: string;
     name: string;
     version: number;
+    course?: string | undefined;
+    book?: string | undefined;
   };
 }
 
@@ -28,6 +32,8 @@ export interface skillDeletedEvent {
     _id: string;
     name: string;
     version: number;
+    course?: string | undefined;
+    book?: string | undefined;
   };
 }
 
@@ -39,6 +45,8 @@ export interface programmingLngCreatedEvent {
     _id: string;
     name: string;
     version: number;
+    course?: string | undefined;
+    book?: string | undefined;
   };
 }
 
@@ -48,6 +56,8 @@ export interface programmingLngUpdatedEvent {
     _id: string;
     name: string;
     version: number;
+    course?: string | undefined;
+    book?: string | undefined;
   };
 }
 
@@ -57,6 +67,8 @@ export interface programmingLngDeletedEvent {
     _id: string;
     name: string;
     version: number;
+    course?: string | undefined;
+    book?: string | undefined;
   };
 }
 
@@ -67,8 +79,10 @@ export interface courseCreatedEvent {
   data: {
     _id: string;
     name: string;
-    skill?: string[];
-    language?: string[];
+    courseURL: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
     version: number;
   };
 }
@@ -78,8 +92,10 @@ export interface courseUpdatedEvent {
   data: {
     _id: string;
     name: string;
-    skill?: string[];
-    language?: string[];
+    courseURL: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
     version: number;
   };
 }
@@ -89,6 +105,10 @@ export interface courseDeletedEvent {
   data: {
     _id: string;
     name: string;
+    courseURL: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
     version: number;
   };
 }
