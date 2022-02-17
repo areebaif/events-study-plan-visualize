@@ -67,8 +67,8 @@ export interface courseCreatedEvent {
   data: {
     _id: string;
     name: string;
-    skill: string[];
-    language: string[];
+    skill?: string[];
+    language?: string[];
     version: number;
   };
 }
@@ -78,8 +78,8 @@ export interface courseUpdatedEvent {
   data: {
     _id: string;
     name: string;
-    skill: string[];
-    language: string[];
+    skill?: string[];
+    language?: string[];
     version: number;
   };
 }
