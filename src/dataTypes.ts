@@ -10,7 +10,6 @@ export interface skillCreatedEvent {
     _id: string;
     name: string;
     version: number;
-    dbStatus: string;
   };
 }
 
@@ -20,7 +19,6 @@ export interface skillUpdatedEvent {
     _id: string;
     name: string;
     version: number;
-    dbStatus: string;
   };
 }
 
@@ -28,8 +26,8 @@ export interface skillDeletedEvent {
   subject: Subjects.SkillDeleted;
   data: {
     _id: string;
+    name: string;
     version: number;
-    dbStatus: string;
   };
 }
 
@@ -41,7 +39,6 @@ export interface programmingLngCreatedEvent {
     _id: string;
     name: string;
     version: number;
-    dbStatus: string;
   };
 }
 
@@ -51,7 +48,6 @@ export interface programmingLngUpdatedEvent {
     _id: string;
     name: string;
     version: number;
-    dbStatus: string;
   };
 }
 
@@ -59,8 +55,8 @@ export interface programmingLngDeletedEvent {
   subject: Subjects.ProgrammingLanguageDeleted;
   data: {
     _id: string;
+    name: string;
     version: number;
-    dbStatus: string;
   };
 }
 
@@ -73,6 +69,7 @@ export interface courseCreatedEvent {
     name: string;
     skill: string[];
     language: string[];
+    version: number;
   };
 }
 
@@ -83,6 +80,7 @@ export interface courseUpdatedEvent {
     name: string;
     skill: string[];
     language: string[];
+    version: number;
   };
 }
 
@@ -90,5 +88,7 @@ export interface courseDeletedEvent {
   subject: Subjects.CourseDeleted;
   data: {
     _id: string;
+    name: string;
+    version: number;
   };
 }
