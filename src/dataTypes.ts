@@ -10,8 +10,8 @@ export interface skillCreatedEvent {
     _id: string;
     name: string;
     version: number;
-    course?: string | undefined;
-    book?: string | undefined;
+    course?: string;
+    book?: string;
   };
 }
 
@@ -21,8 +21,8 @@ export interface skillUpdatedEvent {
     _id: string;
     name: string;
     version: number;
-    course?: string | undefined;
-    book?: string | undefined;
+    course?: string;
+    book?: string;
   };
 }
 
@@ -32,8 +32,8 @@ export interface skillDeletedEvent {
     _id: string;
     name: string;
     version: number;
-    course?: string | undefined;
-    book?: string | undefined;
+    course?: string;
+    book?: string;
   };
 }
 
@@ -45,8 +45,8 @@ export interface programmingLngCreatedEvent {
     _id: string;
     name: string;
     version: number;
-    course?: string | undefined;
-    book?: string | undefined;
+    course?: string;
+    book?: string;
   };
 }
 
@@ -56,8 +56,8 @@ export interface programmingLngUpdatedEvent {
     _id: string;
     name: string;
     version: number;
-    course?: string | undefined;
-    book?: string | undefined;
+    course?: string;
+    book?: string;
   };
 }
 
@@ -67,8 +67,8 @@ export interface programmingLngDeletedEvent {
     _id: string;
     name: string;
     version: number;
-    course?: string | undefined;
-    book?: string | undefined;
+    course?: string;
+    book?: string;
   };
 }
 
@@ -81,8 +81,8 @@ export interface courseCreatedEvent {
     name: string;
     courseURL: string;
     learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
+    skillId?: string[];
+    languageId?: string[];
     version: number;
   };
 }
@@ -94,8 +94,8 @@ export interface courseUpdatedEvent {
     name: string;
     courseURL: string;
     learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
+    skillId?: string[];
+    languageId?: string[];
     version: number;
   };
 }
@@ -107,8 +107,8 @@ export interface courseDeletedEvent {
     name: string;
     courseURL: string;
     learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
+    skillId?: string[];
+    languageId?: string[];
     version: number;
   };
 }
