@@ -12,4 +12,7 @@ export enum Subjects {
   BookCreated = "book:created",
   BookUpdated = "book:updated",
   BookDeleted = "book:deleted",
+  ProjectCreated = "project:created",
+  ProjectUpdated = "propject:updated",
+  ProjectDeleted = "propject:deleted",
 }
