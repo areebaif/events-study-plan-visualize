@@ -120,7 +120,8 @@ export interface bookCreatedEvent {
   data: {
     _id: string;
     name: string;
-    courseURL: string;
+    bookAuthor?: string;
+    bookVersion?: number;
     learningStatus: number;
     skillId?: string[] | undefined;
     languageId?: string[] | undefined;
@@ -133,7 +134,8 @@ export interface bookUpdatedEvent {
   data: {
     _id: string;
     name: string;
-    courseURL: string;
+    bookAuthor?: string;
+    bookVersion?: number;
     learningStatus: number;
     skillId?: string[] | undefined;
     languageId?: string[] | undefined;
@@ -146,7 +148,46 @@ export interface bookDeletedEvent {
   data: {
     _id: string;
     name: string;
-    courseURL: string;
+    bookAuthor?: string;
+    bookVersion?: number;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
+    version: number;
+  };
+}
+
+///////////////////
+// All Events Related to Expereince Service
+export interface projectCreatedEvent {
+  subject: Subjects.ProjectCreated;
+  data: {
+    _id: string;
+    name: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
+    version: number;
+  };
+}
+
+export interface projectUpdatedEvent {
+  subject: Subjects.ProjectUpdated;
+  data: {
+    _id: string;
+    name: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
+    version: number;
+  };
+}
+
+export interface projectDeletedEvent {
+  subject: Subjects.ProjectDeleted;
+  data: {
+    _id: string;
+    name: string;
     learningStatus: number;
     skillId?: string[] | undefined;
     languageId?: string[] | undefined;
