@@ -1,6 +1,6 @@
 {
   "name": "@ai-common-modules/events",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
