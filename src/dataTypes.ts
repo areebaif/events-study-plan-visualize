@@ -112,3 +112,44 @@ export interface courseDeletedEvent {
     version: number;
   };
 }
+
+///////////////////
+// All Events Related to Book Service
+export interface bookCreatedEvent {
+  subject: Subjects.CourseCreated;
+  data: {
+    _id: string;
+    name: string;
+    courseURL: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
+    version: number;
+  };
+}
+
+export interface bookUpdatedEvent {
+  subject: Subjects.CourseUpdated;
+  data: {
+    _id: string;
+    name: string;
+    courseURL: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
+    version: number;
+  };
+}
+
+export interface bookDeletedEvent {
+  subject: Subjects.CourseDeleted;
+  data: {
+    _id: string;
+    name: string;
+    courseURL: string;
+    learningStatus: number;
+    skillId?: string[] | undefined;
+    languageId?: string[] | undefined;
+    version: number;
+  };
+}
