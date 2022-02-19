@@ -116,7 +116,7 @@ export interface courseDeletedEvent {
 ///////////////////
 // All Events Related to Book Service
 export interface bookCreatedEvent {
-  subject: Subjects.CourseCreated;
+  subject: Subjects.BookCreated;
   data: {
     _id: string;
     name: string;
@@ -129,7 +129,7 @@ export interface bookCreatedEvent {
 }
 
 export interface bookUpdatedEvent {
-  subject: Subjects.CourseUpdated;
+  subject: Subjects.BookUpdated;
   data: {
     _id: string;
     name: string;
@@ -142,7 +142,7 @@ export interface bookUpdatedEvent {
 }
 
 export interface bookDeletedEvent {
-  subject: Subjects.CourseDeleted;
+  subject: Subjects.BookDeleted;
   data: {
     _id: string;
     name: string;
