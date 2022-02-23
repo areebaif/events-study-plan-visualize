@@ -11,7 +11,7 @@ export interface skillCreatedEvent {
     userId: string;
     name: string;
     version: number;
-    course?: string | undefined;
+    course?: string[] | undefined;
     book?: string | undefined;
   };
 }
@@ -23,7 +23,7 @@ export interface skillUpdatedEvent {
     userId: string;
     name: string;
     version: number;
-    course?: string | undefined;
+    course?: string[] | undefined;
     book?: string | undefined;
   };
 }
@@ -35,7 +35,7 @@ export interface skillDeletedEvent {
     userId: string;
     name: string;
     version: number;
-    course?: string | undefined;
+    course?: string[] | undefined;
     book?: string | undefined;
   };
 }
@@ -86,11 +86,13 @@ export interface courseCreatedEvent {
     _id: string;
     userId: string;
     name: string;
-    courseURL: string;
+    courseURL?: string;
     learningStatus: number;
     skillId?: string[] | undefined;
     languageId?: string[] | undefined;
     version: number;
+    description?: string | undefined;
+    type?: string | undefined;
   };
 }
 
@@ -100,11 +102,13 @@ export interface courseUpdatedEvent {
     _id: string;
     userId: string;
     name: string;
-    courseURL: string;
+    courseURL?: string;
     learningStatus: number;
     skillId?: string[] | undefined;
     languageId?: string[] | undefined;
     version: number;
+    description?: string | undefined;
+    type?: string | undefined;
   };
 }
 
@@ -114,11 +118,13 @@ export interface courseDeletedEvent {
     _id: string;
     userId: string;
     name: string;
-    courseURL: string;
+    courseURL?: string;
     learningStatus: number;
     skillId?: string[] | undefined;
     languageId?: string[] | undefined;
     version: number;
+    description?: string | undefined;
+    type?: string | undefined;
   };
 }
 
