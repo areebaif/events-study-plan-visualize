@@ -3,215 +3,128 @@ import { Subjects } from "./subjects";
 // This file contains all types of data emited by events
 
 ///////////////////
+export enum skillActiveStatus {
+  active = "active",
+  inactive = "inactive",
+}
+
+export enum resourceActiveStatus {
+  active = "active",
+  inactive = "inactive",
+}
+
+export enum userActiveStatus {
+  active = "active",
+  inactive = "inactive",
+}
+
+export interface UserCreated {
+  subject: Subjects.UserCreated;
+  data: {
+    _id: string;
+    email: string;
+    dbStatus?: userActiveStatus;
+  };
+}
+
+export interface UserUpdated {
+  subject: Subjects.UserUpdated;
+  data: {
+    _id: string;
+    email: string;
+    dbStatus?: userActiveStatus;
+  };
+}
+
+export interface UserDeleted {
+  subject: Subjects.UserDeleted;
+  data: {
+    _id: string;
+    email: string;
+    dbStatus?: userActiveStatus;
+  };
+}
+
 // All Events Related to Skills Service
-export interface skillCreatedEvent {
+export interface SkillCreatedEvent {
   subject: Subjects.SkillCreated;
   data: {
     _id: string;
     userId: string;
     name: string;
     version: number;
-    course?: string[] | undefined;
-    book?: string | undefined;
+    resourceId?: string[] | undefined;
+    dbStatus?: skillActiveStatus;
   };
 }
 
-export interface skillUpdatedEvent {
+export interface SkillUpdatedEvent {
   subject: Subjects.SkillUpdated;
   data: {
     _id: string;
     userId: string;
     name: string;
     version: number;
-    course?: string[] | undefined;
-    book?: string | undefined;
+    resourceId?: string[] | undefined;
+    dbStatus?: skillActiveStatus;
   };
 }
 
-export interface skillDeletedEvent {
+export interface SkillDeletedEvent {
   subject: Subjects.SkillDeleted;
   data: {
     _id: string;
     userId: string;
     name: string;
     version: number;
-    course?: string[] | undefined;
-    book?: string | undefined;
+    resourceId?: string[] | undefined;
+    dbStatus?: skillActiveStatus;
   };
 }
 
 ///////////////////
-// All Events Related to Programming Language Service
-export interface programmingLngCreatedEvent {
-  subject: Subjects.ProgrammingLanguageCreated;
+// All Events Related to Resource Service
+export interface ResourceCreatedEvent {
+  subject: Subjects.ResourceCreated;
   data: {
     _id: string;
     userId: string;
     name: string;
-    version: number;
-    course?: string | undefined;
-    book?: string | undefined;
-  };
-}
-
-export interface programmingLngUpdatedEvent {
-  subject: Subjects.ProgrammingLanguageUpdated;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    version: number;
-    course?: string | undefined;
-    book?: string | undefined;
-  };
-}
-
-export interface programmingLngDeletedEvent {
-  subject: Subjects.ProgrammingLanguageDeleted;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    version: number;
-    course?: string | undefined;
-    book?: string | undefined;
-  };
-}
-
-///////////////////
-// All Events Related to Course Service
-export interface courseCreatedEvent {
-  subject: Subjects.CourseCreated;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    courseURL?: string;
     learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
     version: number;
+    type: string | undefined;
+    skillId?: string[] | undefined;
     description?: string | undefined;
-    type?: string | undefined;
+    dbStatus?: resourceActiveStatus;
   };
 }
 
-export interface courseUpdatedEvent {
-  subject: Subjects.CourseUpdated;
+export interface ResourceUpdatedEvent {
+  subject: Subjects.ResourceUpdated;
   data: {
     _id: string;
     userId: string;
     name: string;
-    courseURL?: string;
     learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
     version: number;
+    type: string | undefined;
+    skillId?: string[] | undefined;
     description?: string | undefined;
-    type?: string | undefined;
+    dbStatus?: resourceActiveStatus;
   };
 }
 
-export interface courseDeletedEvent {
-  subject: Subjects.CourseDeleted;
+export interface ResourceDeletedEvent {
+  subject: Subjects.ResourceDeleted;
   data: {
     _id: string;
     userId: string;
     name: string;
-    courseURL?: string;
     learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
     version: number;
+    type: string | undefined;
+    skillId?: string[] | undefined;
     description?: string | undefined;
-    type?: string | undefined;
-  };
-}
-
-///////////////////
-// All Events Related to Book Service
-export interface bookCreatedEvent {
-  subject: Subjects.BookCreated;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    learningStatus: number;
-    version: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
-    bookAuthor?: string;
-    bookVersion?: number;
-  };
-}
-
-export interface bookUpdatedEvent {
-  subject: Subjects.BookUpdated;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    learningStatus: number;
-    version: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
-    bookAuthor?: string;
-    bookVersion?: number;
-  };
-}
-
-export interface bookDeletedEvent {
-  subject: Subjects.BookDeleted;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    learningStatus: number;
-    version: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
-    bookAuthor?: string;
-    bookVersion?: number;
-  };
-}
-
-///////////////////
-// All Events Related to Expereince Service
-export interface projectCreatedEvent {
-  subject: Subjects.ProjectCreated;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    version: number;
-    learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
-  };
-}
-
-export interface projectUpdatedEvent {
-  subject: Subjects.ProjectUpdated;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    version: number;
-    learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
-  };
-}
-
-export interface projectDeletedEvent {
-  subject: Subjects.ProjectDeleted;
-  data: {
-    _id: string;
-    userId: string;
-    name: string;
-    version: number;
-    learningStatus: number;
-    skillId?: string[] | undefined;
-    languageId?: string[] | undefined;
+    dbStatus?: resourceActiveStatus;
   };
 }
